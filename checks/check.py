@@ -423,7 +423,10 @@ def t5_2():
         return
     pid = pidfile.read_text().strip()
     yield ask(doc, "hog_pid", pid, "the runaway's process ID (challenge)", low, "but that's not labhog's PID. ps or top shows it.")
-    alive = os.path.exists(f"/proc/{pid}")
+    try:  # a killed process nobody has reaped yet is a zombie (state Z): it's stopped, just not cleared away
+        alive = pathlib.Path(f"/proc/{pid}/stat").read_text().rsplit(")", 1)[1].split()[0] != "Z"
+    except (OSError, IndexError):
+        alive = False
     yield (not alive, "labhog is stopped (challenge)" + ("" if not alive else ": it's still running"))
     yield ask(doc, "signal_that_worked", "kill", "the signal that stopped it (challenge)",
               lambda s: low(s).removeprefix("sig").replace("-", "").replace("9", "kill"),

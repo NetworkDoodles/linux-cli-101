@@ -9,6 +9,7 @@
   "name": "Network Doodles · Linux and the command line 101",
   "build": { "dockerfile": "Dockerfile", "context": ".." },
   "privileged": true,
+  "init": true,
   "remoteUser": "vscode",
   "hostRequirements": { "cpus": 2, "memory": "4gb" },
 
