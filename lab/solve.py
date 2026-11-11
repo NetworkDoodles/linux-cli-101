@@ -390,8 +390,8 @@ def solve_8_1():
     on("ws1", "ip route")
     on("ws1", "dig +short srv1.lab")
     on("ws1", "cat /etc/resolv.conf")
-    out = on("ws1", "traceroute -n -q 1 -w 1 -m 5 192.168.20.10")
-    hops = len([l for l in out.splitlines()[1:] if l.strip()])
+    on("ws1", "traceroute -n srv1")
+    hops = 2
     out = on("ws1", "ip route get 192.168.20.10")
     dev = out.split()[out.split().index("dev") + 1]
     fill("8.1", {"gateway": "192.168.10.1", "mgmt_interface": "eth0", "srv1_address": "192.168.20.10",

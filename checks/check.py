@@ -586,9 +586,10 @@ def t8_1():
     yield ask(doc, "srv1_address", "192.168.20.10", "srv1's address, from dig (follow along)", low)
     yield ask(doc, "dns_server", "192.168.20.10", "ws1's DNS server (follow along)", low,
               "but that's not what /etc/resolv.conf on ws1 says.")
-    code, out = ws1("traceroute -n -q 1 -w 1 -m 5 192.168.20.10")
-    hops = len([ln for ln in out.splitlines()[1:] if ln.strip()])
-    yield ask(doc, "hops_to_srv1", hops or 2, "how many hops traceroute counts to srv1 (challenge)", low)
+    # ws1 → r1 → srv1 is fixed by the topology. (Counting live would trip on traceroute's stars: Linux
+    # rate-limits the ICMP errors traceroute relies on, so a second run straight after the first can miss them.)
+    yield ask(doc, "hops_to_srv1", 2, "how many hops traceroute counts to srv1 (challenge)", low,
+              "but traceroute -n srv1 lists a different number of lines. If it shows stars, wait a few seconds and run it again.")
     yield ask(doc, "route_dev", "eth1", "the interface ws1 sends srv1's packets out of (challenge)", low,
               "but that's not what ip route get 192.168.20.10 says after dev.")
 
