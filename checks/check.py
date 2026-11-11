@@ -430,8 +430,8 @@ def t5_2():
               "but labhog ignores that one. Which signal can't a process ignore?")
     code, where = lab.new_terminal("command -v labinfo")
     where = where.strip().splitlines()[-1] if where.strip() else ""
-    want = str(HOME / "bin" / "labinfo")
-    yield (where == want, f"a new terminal finds labinfo in ~/bin, from any folder (challenge): {where or 'command not found'}")
+    want = str(HOME / "tools" / "labinfo")
+    yield (where == want, f"a new terminal finds labinfo in ~/tools, from any folder (challenge): {where or 'command not found'}")
     code, out = lab.new_terminal("labinfo")
     yield (code == 0 and "labinfo:" in out, "and labinfo runs (challenge)" + ("" if code == 0 else ": " + (out.splitlines()[-1][:100] if out else "no output")))
 

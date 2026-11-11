@@ -253,8 +253,8 @@ def solve_5_2():
     bash("ps -eo pid,pcpu,comm --sort=-pcpu | head -n 5")
     bash(f"kill {pid}; sleep 1; ps -p {pid} -o pid,comm || true")
     bash(f"kill -9 {pid}; sleep 1; ps -p {pid} -o pid,comm || true")
-    bash("mkdir -p ~/bin && cp files/labinfo ~/bin/ && chmod +x ~/bin/labinfo")
-    add_line(BASHRC, 'export PATH="$HOME/bin:$PATH"')
+    bash("mkdir -p ~/tools && cp files/labinfo ~/tools/ && chmod +x ~/tools/labinfo")
+    add_line(BASHRC, 'export PATH="$HOME/tools:$PATH"')
     fill("5.2", {"hog_pid": pid, "signal_that_worked": "KILL"})
 
 

@@ -19,3 +19,6 @@ USER root
 # traceroute is left out on purpose: task 4.1 installs it with apt.
 RUN (dpkg -s traceroute >/dev/null 2>&1 && apt-get purge -y -qq traceroute) || true
 USER vscode
+# containerlab's image comes with an SSH key pair (it hands it to the switches it knows). This lab has none of
+# those, and chapter 6 starts from "you have no key yet", so the learner makes their own.
+RUN rm -f /home/vscode/.ssh/id_ecdsa /home/vscode/.ssh/id_ecdsa.pub
