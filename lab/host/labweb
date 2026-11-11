@@ -1,0 +1,21 @@
+#!/bin/sh
+# labweb start|stop|restart|status: srv1's small web service, Python's built-in http.server.
+# It reads BIND (the address to listen on) and PORT from /etc/labweb.conf.
+. /etc/labweb.conf
+PID=/run/labweb.pid
+case "$1" in
+  start)
+    [ -s $PID ] && kill -0 "$(cat $PID)" 2>/dev/null && { echo "labweb is already running"; exit 0; }
+    python3 -m http.server --bind "$BIND" --directory /srv/www "$PORT" >>/var/log/labweb.log 2>&1 &
+    echo $! > $PID
+    sleep 0.5
+    echo "labweb listening on $BIND port $PORT" ;;
+  stop)
+    [ -s $PID ] && kill "$(cat $PID)" 2>/dev/null; rm -f $PID; echo "labweb stopped" ;;
+  restart)
+    "$0" stop; "$0" start ;;
+  status)
+    if [ -s $PID ] && kill -0 "$(cat $PID)" 2>/dev/null; then echo "labweb is running (pid $(cat $PID))"
+    else echo "labweb is stopped"; exit 3; fi ;;
+  *) echo "usage: labweb start|stop|restart|status" >&2; exit 2 ;;
+esac

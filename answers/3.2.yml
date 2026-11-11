@@ -1,0 +1,11 @@
+# Task 3.2 · who's knocking?
+# Each answer is a command that reads "$LOG", on one line after its colon, like in task 3.1.
+# Save the file, then run:  make check T=3.2      Guide: https://networkdoodles.com/labs/linux-cli-101/task-3-2/
+
+# Challenge
+# How many failed logins are there? (prints one number)
+failed_total:
+# Failed logins per user name, most first, like:   3 netops
+failed_by_user:
+# Every user name that failed, once each, A to Z, one per line
+users_once:

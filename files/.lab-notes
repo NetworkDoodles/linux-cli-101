@@ -1,0 +1,1 @@
+A hidden file: ls shows it only with -a, because its name starts with a dot.

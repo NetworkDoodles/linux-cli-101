@@ -1,0 +1,11 @@
+# Task 2.1 · read and write
+# Write each answer after its colon, save the file, then run:  make check T=2.1
+# Guide: https://networkdoodles.com/labs/linux-cli-101/task-2-1/
+
+# Follow along: files/logs/r1.log
+first_event:       # the event on the first line, the word after %CAPEOS-5-, like RESTART
+last_event:        # the event on the last line
+gi1_down_time:     # the time GigabitEthernet1 first went down (LINK_DOWN), like 05:42:21
+live_word:         # the word that shows up in files/logs/live.log after make live
+
+# Challenge: nothing to write here. You write ~/notes.txt with nano.

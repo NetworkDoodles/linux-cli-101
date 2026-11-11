@@ -1,0 +1,7 @@
+# Task 5.2 · runaway
+# Run make break T=5.2 first. Write each answer after its colon, save the file, then run:  make check T=5.2
+# Guide: https://networkdoodles.com/labs/linux-cli-101/task-5-2/
+
+# Challenge
+hog_pid:             # labhog's process ID, from ps or top
+signal_that_worked:  # the signal that finally stopped it

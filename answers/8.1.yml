@@ -1,0 +1,13 @@
+# Task 8.1 · where does it go?
+# Log in to ws1 (ssh ws1) for these. Write each answer after its colon, save the file, then: make check T=8.1
+# Guide: https://networkdoodles.com/labs/linux-cli-101/task-8-1/
+
+# Follow along
+gateway:           # ws1's default gateway (ip route)
+mgmt_interface:    # the interface on the management network, 172.80.102.0/24 (ip -br addr)
+srv1_address:      # srv1.lab's address, from dig
+dns_server:        # the DNS server ws1 asks (/etc/resolv.conf)
+
+# Challenge
+hops_to_srv1:      # how many hops traceroute -n counts to srv1
+route_dev:         # the interface ws1 sends srv1's packets out of (ip route get)

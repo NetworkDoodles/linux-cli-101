@@ -1,0 +1,11 @@
+# Task 5.1 · jobs and variables
+# Write each answer after its colon, save the file, then run:  make check T=5.1
+# Guide: https://networkdoodles.com/labs/linux-cli-101/task-5-1/
+
+# Follow along
+shell_name:        # the shell you're typing into (echo $0)
+python_path:       # what which python prints
+stopped_word:      # what jobs says about sleep after you press Ctrl+Z, one word
+top_quit_key:      # the key that quits top
+
+# Challenge: LAB_SITE in ~/.bashrc. Nothing more to write here.

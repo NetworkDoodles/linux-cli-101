@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# labinfo: who and where you are, and which lab site you've set (task 5.2).
+echo "labinfo: $USER on $(hostname), in $PWD"
+echo "labinfo: LAB_SITE is ${LAB_SITE:-not set}"

@@ -1,0 +1,8 @@
+# The lab's machines, one per line: scripts/reach.sh pings each one (task 7.1).
+# Lines that start with # are comments, and blank lines don't count.
+ws1
+srv1
+r1
+
+# This one was switched off last year, but nobody took it out of the list.
+172.80.102.99

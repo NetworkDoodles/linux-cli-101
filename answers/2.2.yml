@@ -1,0 +1,7 @@
+# Task 2.2 · tidy up
+# Write each answer after its colon, save the file, then run:  make check T=2.2
+# Guide: https://networkdoodles.com/labs/linux-cli-101/task-2-2/
+
+# Challenge
+empty_files:       # how many empty .cfg files find finds under files/ (count them before you delete them)
+leaf2_files:       # how many files under files/ have leaf2 in their name

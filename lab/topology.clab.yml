@@ -1,0 +1,40 @@
+# The lab's network, in containerlab: a workstation and a server, with a router between them.
+#
+#   codespace ─ ─ management network 172.80.102.0/24 ─ ─ ws1, srv1, r1
+#
+#   ws1 ──── r1 ──── srv1
+#   192.168.10.0/24  192.168.20.0/24
+#
+# r1 runs CapeOS Bolt (a lab network OS with an IOS-style CLI). ws1 and srv1 are Debian machines
+# (lab/host/). containerlab names ports by their Linux names: eth1 is GigabitEthernet1.
+name: lcli
+prefix: ""                          # containers are named after the nodes
+
+mgmt:
+  network: lcli-mgmt
+  ipv4-subnet: 172.80.102.0/24
+
+topology:
+  nodes:
+    r1:
+      kind: linux
+      image: ghcr.io/dkhenderson2/capeos-bolt:0.11.0
+      mgmt-ipv4: 172.80.102.2
+      env: { CAPEOS_USER: admin, CAPEOS_PASSWORD: capeos-lab }
+      binds: [configs/r1.cfg:/flash/startup-config:ro]
+    ws1:
+      kind: linux
+      image: nd-linuxhost:1
+      mgmt-ipv4: 172.80.102.11
+      exec: [start ws1]
+    srv1:
+      kind: linux
+      image: nd-linuxhost:1
+      mgmt-ipv4: 172.80.102.12
+      binds: [dns:/etc/lab-dns:ro]
+      exec: [start srv1]
+
+  # Every cable carries ordinary 1500-byte frames (containerlab's default is 9500).
+  links:
+    - { endpoints: ["ws1:eth1", "r1:eth1"], mtu: 1500 }
+    - { endpoints: ["srv1:eth1", "r1:eth2"], mtu: 1500 }

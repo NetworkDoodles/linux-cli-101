@@ -1,0 +1,10 @@
+# Task 4.1 · who may do what
+# Write each answer after its colon, save the file, then run:  make check T=4.1
+# Guide: https://networkdoodles.com/labs/linux-cli-101/task-4-1/
+
+# Follow along
+shadow_owner:      # the user who owns /etc/shadow (ls -l)
+shadow_group:      # its group
+without_sudo:      # what cat /etc/shadow says without sudo: the last words of its message
+
+# The rest of this task is files you make in work/, and a program you install: nothing more to write here.

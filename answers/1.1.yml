@@ -1,0 +1,13 @@
+# Task 1.1 · where am I?
+# Write each answer after its colon, save the file (Ctrl+S), then run:  make check T=1.1
+# Guide: https://networkdoodles.com/labs/linux-cli-101/task-1-1/
+
+# Follow along
+home:              # the absolute path of your home folder
+repo:              # the absolute path of the folder a new terminal opens in (the lab's folder)
+os:                # the PRETTY_NAME line of /etc/os-release, without the quotes
+hidden_file:       # the name of the hidden file in files/
+
+# Challenge
+ls_sizes_option:   # the ls option that prints sizes as K, M and G instead of bytes (ls --help)
+logs_folder:       # the absolute path of the folder where Linux keeps its logs

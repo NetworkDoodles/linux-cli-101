@@ -1,0 +1,37 @@
+*Nov 11 05:42:28.266: %CAPEOS-5-RESTART: CapeOS 0.11.0 started
+*Nov 11 05:42:32.023: %CAPEOS-5-LOGIN_OK: Login by admin from 172.80.102.1 port 60330
+*Nov 11 05:42:33.264: %CAPEOS-3-LINK_DOWN: Interface GigabitEthernet2 is down (administratively)
+*Nov 11 05:42:33.264: %CAPEOS-5-PROTO_DOWN: Line protocol on GigabitEthernet2 is down
+*Nov 11 05:42:33.264: %CAPEOS-5-CONFIG_DONE: Configured from console by root
+*Nov 11 05:42:35.402: %CAPEOS-5-CONFIG_DONE: Configured from console by root
+*Nov 11 05:42:36.073: %CAPEOS-3-LINK_UP: Interface GigabitEthernet2 is up
+*Nov 11 05:42:36.074: %CAPEOS-5-PROTO_UP: Line protocol on GigabitEthernet2 is up
+*Nov 11 05:42:38.832: %CAPEOS-4-LOGIN_FAILED: Login failed for guest from 172.80.102.1 port 41694
+*Nov 11 05:42:47.185: %CAPEOS-4-LOGIN_FAILED: Login failed for netops from 172.80.102.1 port 41698
+*Nov 11 05:42:55.209: %CAPEOS-3-LINK_DOWN: Interface GigabitEthernet1 is down (administratively)
+*Nov 11 05:42:55.210: %CAPEOS-5-PROTO_DOWN: Line protocol on GigabitEthernet1 is down
+*Nov 11 05:42:55.211: %CAPEOS-5-CONFIG_DONE: Configured from console by root
+*Nov 11 05:42:57.433: %CAPEOS-5-CONFIG_DONE: Configured from console by root
+*Nov 11 05:42:58.232: %CAPEOS-3-LINK_UP: Interface GigabitEthernet1 is up
+*Nov 11 05:42:58.232: %CAPEOS-5-PROTO_UP: Line protocol on GigabitEthernet1 is up
+*Nov 11 05:43:01.375: %CAPEOS-4-LOGIN_FAILED: Login failed for netops from 172.80.102.1 port 33882
+*Nov 11 05:43:09.580: %CAPEOS-4-LOGIN_FAILED: Login failed for support from 172.80.102.1 port 39220
+*Nov 11 05:43:18.153: %CAPEOS-5-LOGIN_OK: Login by admin from 172.80.102.1 port 41092
+*Nov 11 05:43:19.370: %CAPEOS-3-LINK_DOWN: Interface GigabitEthernet2 is down (administratively)
+*Nov 11 05:43:19.370: %CAPEOS-5-PROTO_DOWN: Line protocol on GigabitEthernet2 is down
+*Nov 11 05:43:19.371: %CAPEOS-5-CONFIG_DONE: Configured from console by root
+*Nov 11 05:43:21.541: %CAPEOS-5-CONFIG_DONE: Configured from console by root
+*Nov 11 05:43:22.044: %CAPEOS-3-LINK_UP: Interface GigabitEthernet2 is up
+*Nov 11 05:43:22.044: %CAPEOS-5-PROTO_UP: Line protocol on GigabitEthernet2 is up
+*Nov 11 05:43:24.850: %CAPEOS-4-LOGIN_FAILED: Login failed for guest from 172.80.102.1 port 41102
+*Nov 11 05:43:33.305: %CAPEOS-4-LOGIN_FAILED: Login failed for netops from 172.80.102.1 port 39804
+*Nov 11 05:43:41.593: %CAPEOS-4-LOGIN_FAILED: Login failed for operator from 172.80.102.1 port 48554
+*Nov 11 05:43:49.571: %CAPEOS-3-LINK_DOWN: Interface GigabitEthernet2 is down (administratively)
+*Nov 11 05:43:49.571: %CAPEOS-5-PROTO_DOWN: Line protocol on GigabitEthernet2 is down
+*Nov 11 05:43:49.572: %CAPEOS-5-CONFIG_DONE: Configured from console by root
+*Nov 11 05:43:51.715: %CAPEOS-5-CONFIG_DONE: Configured from console by root
+*Nov 11 05:43:52.392: %CAPEOS-3-LINK_UP: Interface GigabitEthernet2 is up
+*Nov 11 05:43:52.392: %CAPEOS-5-PROTO_UP: Line protocol on GigabitEthernet2 is up
+*Nov 11 05:43:55.141: %CAPEOS-4-LOGIN_FAILED: Login failed for support from 172.80.102.1 port 41100
+*Nov 11 05:44:03.607: %CAPEOS-5-LOGIN_OK: Login by admin from 172.80.102.1 port 35784
+*Nov 11 05:44:04.722: %CAPEOS-5-CONFIG_DONE: Configured from console by root

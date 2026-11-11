@@ -1,0 +1,6 @@
+# Task 4.2 · too open, too closed
+# Run make break T=4.2 first. Write the answer after its colon, save the file, then run:  make check T=4.2
+# Guide: https://networkdoodles.com/labs/linux-cli-101/task-4-2/
+
+# Challenge
+ssh_warning:       # the word in capitals that ssh warned you with, about the key file

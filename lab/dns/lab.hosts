@@ -1,0 +1,4 @@
+# The lab's DNS names: one line per name, the IP address first. srv1 answers for them.
+192.168.10.10  ws1.lab
+192.168.20.10  srv1.lab
+192.168.10.1   r1.lab

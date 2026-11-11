@@ -1,0 +1,4 @@
+Handover for the srv1 team
+
+- labweb listens on port 8080
+- r1 is the gateway for both networks

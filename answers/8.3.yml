@@ -1,0 +1,7 @@
+# Task 8.3 · catch it on the wire
+# Write each answer after its colon, save the file, then run:  make check T=8.3
+# Guide: https://networkdoodles.com/labs/linux-cli-101/task-8-3/
+
+# Challenge: from the capture you copied back to captures/web.pcap
+client_port:       # ws1's own port for the connection (the SYN's source port)
+packets:           # how many packets the capture holds

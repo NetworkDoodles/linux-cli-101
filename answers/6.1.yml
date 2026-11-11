@@ -1,0 +1,6 @@
+# Task 6.1 · your first key
+# Write the answer after its colon, save the file, then run:  make check T=6.1
+# Guide: https://networkdoodles.com/labs/linux-cli-101/task-6-1/
+
+# Follow along
+ws1_fingerprint:   # the fingerprint ssh showed the first time you connected to ws1, starting SHA256:

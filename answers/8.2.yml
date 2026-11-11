@@ -1,0 +1,8 @@
+# Task 8.2 · refused
+# Write each answer after its colon, save the file, then run:  make check T=8.2
+# Guide: https://networkdoodles.com/labs/linux-cli-101/task-8-2/
+
+# Challenge
+curl_said:         # the word curl -v used for the failure, from ws1
+listen_before:     # the address labweb listened on, from ss -tlnp on srv1, before you changed anything
+listen_after:      # the address it listens on after your fix

@@ -1,0 +1,19 @@
+# Task 3.1 · pipelines
+# Each answer is a command, on one line after its colon. Write "$LOG" where the log file goes:
+# the checker runs your command on files/logs/r1.log and on logs it hasn't seen.
+# To try one in the terminal first:  LOG=files/logs/r1.log   then paste the command.
+# Save the file, then run:  make check T=3.1      Guide: https://networkdoodles.com/labs/linux-cli-101/task-3-1/
+
+# Follow along
+# How many lines mention GigabitEthernet2? (prints one number)
+gi2_lines:
+# Only the lines with LOGIN_FAILED in them
+failed_lines:
+# How many lines are NOT CONFIG_DONE? (prints one number)
+not_config:
+
+# Challenge
+# For each interface, how many times it went down (LINK_DOWN), most first, like:   3 GigabitEthernet2
+downs_per_interface:
+# Every severity 3 line (they have -3- in them) saved into reports/errors.txt, and nothing on the screen
+save_errors:
