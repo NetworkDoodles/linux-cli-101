@@ -413,8 +413,7 @@ def solve_8_3():
         print("  (task 8.2 isn't done yet, so doing it first)")
         solve_8_2()
     on("ws1", "rm -f web.pcap; (sudo timeout 8 tcpdump -n -i eth1 -w web.pcap port 8080 >/dev/null 2>&1 &); sleep 2; "
-              "curl -s http://srv1:8080/ >/dev/null; sleep 1; sudo pkill -INT -x tcpdump; sleep 1; "
-              "sudo chown netops: web.pcap")
+              "curl -s http://srv1:8080/ >/dev/null; sleep 1; sudo pkill -INT -x tcpdump; sleep 1")
     bash("mkdir -p captures && scp -q ws1:web.pcap captures/", check=True)
     out = bash("tcpdump -n -r captures/web.pcap 2>/dev/null")
     pkts = [l for l in out.splitlines() if re.match(r"\d\d:\d\d:\d\d", l)]

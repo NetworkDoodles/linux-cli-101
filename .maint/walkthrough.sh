@@ -120,8 +120,10 @@ step "6.1"
 show 'ls -la ~/.ssh'
 show 'docker exec ws1 ssh-keygen -lf /etc/ssh/ssh_host_ed25519_key.pub'
 fp=$(docker exec ws1 ssh-keygen -lf /etc/ssh/ssh_host_ed25519_key.pub | awk '{print $2}')
+show 'ssh-keygen -R ws1'
 show '(sleep 3; printf "no\n") | timeout 15 script -qec "ssh netops@ws1" /dev/null 2>&1 | tr -d "\r" | head -n 6'
-ssh-keyscan -t ed25519 ws1 2>/dev/null | ssh-keygen -lf - | grep -q "$fp" && ssh-keyscan -H ws1 >> ~/.ssh/known_hosts 2>/dev/null
+# typing yes saves the one key ssh was shown: the ED25519 one
+ssh-keyscan -t ed25519 ws1 2>/dev/null | ssh-keygen -lf - | grep -q "$fp" && ssh-keyscan -t ed25519 -H ws1 >> ~/.ssh/known_hosts 2>/dev/null
 show "ssh-keygen -t ed25519 -N '' -f ~/.ssh/id_ed25519 | head -n 4"
 withpw netops-lab ssh-copy-id netops@ws1 2>&1 | tail -n 3
 show 'ssh -o BatchMode=yes netops@ws1 hostname'
@@ -131,13 +133,13 @@ check 6.1
 step "6.2"
 printf 'Host ws1\n    User netops\nHost srv1\n    User netops\nHost r1\n    User admin\n' >> ~/.ssh/config
 show 'ssh -G ws1 | head -n 4'
-ssh-keyscan -H srv1 >> ~/.ssh/known_hosts 2>/dev/null
+ssh-keyscan -t ed25519 -H srv1 >> ~/.ssh/known_hosts 2>/dev/null
 withpw netops-lab ssh-copy-id srv1 2>&1 | tail -n 2
 show 'scp files/notes/handover.txt srv1: && ssh srv1 cat handover.txt'
 make -s break T=6.2
 show 'ssh -o BatchMode=yes srv1 true 2>&1'
 show 'ssh-keygen -R srv1'
-ssh-keyscan -H srv1 >> ~/.ssh/known_hosts 2>/dev/null
+ssh-keyscan -t ed25519 -H srv1 >> ~/.ssh/known_hosts 2>/dev/null
 show 'ssh srv1 hostname'
 show 'printf "exit\n" | withpw capeos-lab ssh -o StrictHostKeyChecking=accept-new r1 2>&1 | tail -n 2' || true
 check 6.2
@@ -198,7 +200,7 @@ check 8.2
 
 step "8.3"
 show 'ssh ws1 "sudo tcpdump -n -i eth1 -w web.pcap port 8080 & sleep 2; curl -s http://srv1:8080/ >/dev/null; sleep 1; sudo pkill -INT -x tcpdump; sleep 1; ls -l web.pcap"'
-show 'ssh ws1 "sudo chown netops: web.pcap; tcpdump -n -r web.pcap | head -n 2"'
+show 'ssh ws1 "tcpdump -n -r web.pcap | head -n 2"'
 show 'scp ws1:web.pcap captures/ && tcpdump -n -r captures/web.pcap 2>/dev/null | wc -l'
 port=$(tcpdump -n -r captures/web.pcap 2>/dev/null | head -n 1 | awk '{print $3}' | awk -F. '{print $NF}')
 fill 8.3 client_port "$port"; fill 8.3 packets "$(tcpdump -n -r captures/web.pcap 2>/dev/null | wc -l)"
