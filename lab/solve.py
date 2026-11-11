@@ -116,7 +116,7 @@ def break_4_2():
     print("    work/team-notes.txt    a file anyone can change\n")
 
 
-HOG = """#!/usr/bin/env bash
+HOG = """#!/bin/bash
 # labhog: a runaway, for task 5.2. It ignores the polite signals and stops by itself after 30 minutes.
 trap '' TERM INT HUP
 end=$((SECONDS + 1800))

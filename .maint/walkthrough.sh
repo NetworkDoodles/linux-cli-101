@@ -8,7 +8,7 @@ set -uo pipefail
 cd "$(dirname "$0")/.."
 step() { printf '\n\033[1m── %s\033[0m\n' "$*"; }
 show() { printf '\033[2m$ %s\033[0m\n' "$*"; bash -c "$*"; }
-check() { make -s check T="$1" | tail -n 1; }
+check() { make -s check T="$1" | grep '╰─'; }
 fill() { sed -i "s|^$2:.*|$2: $3|" "answers/$1.yml"; }
 ASK=$(mktemp); printf '#!/bin/sh\necho "$LAB_PASSWORD"\n' > "$ASK"; chmod 700 "$ASK"
 withpw() { LAB_PASSWORD="$1" SSH_ASKPASS="$ASK" SSH_ASKPASS_REQUIRE=force DISPLAY=:0 "${@:2}" </dev/null; }
@@ -120,7 +120,7 @@ step "6.1"
 show 'ls -la ~/.ssh'
 show 'docker exec ws1 ssh-keygen -lf /etc/ssh/ssh_host_ed25519_key.pub'
 fp=$(docker exec ws1 ssh-keygen -lf /etc/ssh/ssh_host_ed25519_key.pub | awk '{print $2}')
-show 'printf "no\n" | script -qec "ssh netops@ws1" /dev/null 2>&1 | tr -d "\r" | head -n 4'
+show '(sleep 3; printf "no\n") | timeout 15 script -qec "ssh netops@ws1" /dev/null 2>&1 | tr -d "\r" | head -n 6'
 ssh-keyscan -t ed25519 ws1 2>/dev/null | ssh-keygen -lf - | grep -q "$fp" && ssh-keyscan -H ws1 >> ~/.ssh/known_hosts 2>/dev/null
 show "ssh-keygen -t ed25519 -N '' -f ~/.ssh/id_ed25519 | head -n 4"
 withpw netops-lab ssh-copy-id netops@ws1 2>&1 | tail -n 3
@@ -205,4 +205,4 @@ fill 8.3 client_port "$port"; fill 8.3 packets "$(tcpdump -n -r captures/web.pca
 check 8.3
 
 step "everything"
-make -s check | tail -n 1
+make -s check | grep '╰─' | tail -n 1
