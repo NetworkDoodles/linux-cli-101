@@ -1,6 +1,6 @@
 # Linux and the command line 101
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/NetworkDoodles/linux-cli-101?quickstart=1)
+**[▶ Open the lab](https://labs.networkdoodles.com/open/linux-cli-101)**: one click, nothing to install
 
 The hands-on lab for [Linux and the command line 101](https://networkdoodles.com/lessons/linux-cli-101/): the
 shell and the filesystem, files, pipes and grep, permissions, processes and PATH, SSH and keys, a little Bash,
@@ -17,10 +17,14 @@ and the network commands, on a real Linux machine with a small network next to i
 
 ## Start
 
-1. Click **Open in GitHub Codespaces** above, then **Create codespace**. If VS Code asks whether you trust
-   the folder, click **Trust Folder & Continue**.
-2. Wait for the **Lab status** terminal to show ws1, r1 and srv1 with green ticks.
-3. Open a terminal of your own (Ctrl+`) and follow [task 1.1](https://networkdoodles.com/labs/linux-cli-101/task-1-1/).
+**Open the lab** (the link above, or the button on the [guide's page](https://networkdoodles.com/labs/linux-cli-101/)) and
+sign in with GitHub. It creates your own codespace, on your GitHub account's free allowance, and opens the lab
+app: the guide on the left, VS Code on the right. The first start takes a few minutes; the top bar says
+**network up** when it's ready. Then follow [task 1.1](https://networkdoodles.com/labs/linux-cli-101/task-1-1/):
+**Check task**, under the guide, checks your work.
+
+On your own laptop instead: open the repo in its dev container (VS Code's *Reopen in Container*, or
+`npx @devcontainers/cli up --workspace-folder .`), then the lab app is at http://localhost:8000.
 
 ## Commands
 

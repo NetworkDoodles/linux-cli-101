@@ -1,0 +1,136 @@
+{
+  "title": "Linux CLI 101",
+  "guide": "https://networkdoodles.com/labs/linux-cli-101/",
+  "network": {
+    "name": "lcli",
+    "nodes": 3
+  },
+  "launcher": "https://labs.networkdoodles.com",
+  "chapters": [
+    {
+      "n": 1,
+      "title": "The shell and the filesystem",
+      "tasks": [
+        [
+          "1.1",
+          "Where am I?"
+        ],
+        [
+          "1.2",
+          "Paths"
+        ]
+      ]
+    },
+    {
+      "n": 2,
+      "title": "Working with files",
+      "tasks": [
+        [
+          "2.1",
+          "Read and write"
+        ],
+        [
+          "2.2",
+          "Tidy up"
+        ]
+      ]
+    },
+    {
+      "n": 3,
+      "title": "Pipes, redirection and grep",
+      "tasks": [
+        [
+          "3.1",
+          "Pipelines"
+        ],
+        [
+          "3.2",
+          "Who's knocking?"
+        ]
+      ]
+    },
+    {
+      "n": 4,
+      "title": "Users, permissions and sudo",
+      "tasks": [
+        [
+          "4.1",
+          "Who may do what"
+        ],
+        [
+          "4.2",
+          "Too open, too closed"
+        ]
+      ]
+    },
+    {
+      "n": 5,
+      "title": "Processes, environment variables and PATH",
+      "tasks": [
+        [
+          "5.1",
+          "Jobs and variables"
+        ],
+        [
+          "5.2",
+          "Runaway"
+        ]
+      ]
+    },
+    {
+      "n": 6,
+      "title": "SSH and keys",
+      "tasks": [
+        [
+          "6.1",
+          "Your first key"
+        ],
+        [
+          "6.2",
+          "Short names, a copy, a changed key"
+        ]
+      ]
+    },
+    {
+      "n": 7,
+      "title": "A little Bash scripting",
+      "tasks": [
+        [
+          "7.1",
+          "Is everyone up?"
+        ],
+        [
+          "7.2",
+          "Audit the configs"
+        ]
+      ]
+    },
+    {
+      "n": 8,
+      "title": "The network from the command line",
+      "tasks": [
+        [
+          "8.1",
+          "Where does it go?"
+        ],
+        [
+          "8.2",
+          "Refused"
+        ],
+        [
+          "8.3",
+          "Catch it on the wire"
+        ]
+      ]
+    }
+  ],
+  "tabs": [
+    {
+      "id": "code",
+      "name": "VS Code",
+      "path": "/code/",
+      "port": 13337,
+      "strip": true
+    }
+  ]
+}
