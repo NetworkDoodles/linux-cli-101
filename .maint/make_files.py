@@ -45,7 +45,7 @@ def main():
     for d in ("site", "backups", "configs", "notes"):
         shutil.rmtree(F / d, ignore_errors=True)
 
-    # Chapter 1: a small tree to find your way round. Two sites, two racks each, a leaf switch per rack.
+    # Chapter 1: a small tree to find your way around. Two sites, two racks each, a leaf switch per rack.
     for site in ("nyc", "chi"):
         for rack in (1, 2):
             write(F / "site" / site / f"rack{rack}" / f"{site}-leaf{rack}.cfg", leaf(site, rack, rack))
