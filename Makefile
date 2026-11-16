@@ -7,7 +7,7 @@
 VENV ?= .venv
 PY := $(VENV)/bin/python
 TOPO := lab/topology.clab.yml
-BOLT := ghcr.io/dkhenderson2/capeos-bolt:0.11.0
+BOLT := ghcr.io/dkhenderson2/capeos-bolt:0.11.2
 HOST := nd-linuxhost:1
 NODES := ws1 srv1 r1
 T ?=
